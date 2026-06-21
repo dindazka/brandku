@@ -1,6 +1,6 @@
-export deafault {
-    sortUserPlugins; {
-        tailwind.css: {},
-        autoprefixer: {},
-    },
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
 }
