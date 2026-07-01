@@ -1,14 +1,20 @@
 export const featureData = [
   {
+    id: 1,
+    icon: "⚡",
     title: "Cepat",
-    desc: "Aplikasi ringan dan cepat",
+    subtitle: "Aplikasi ringan dan cepat",
   },
   {
+    id: 2,
+    icon: "✨",
     title: "Modern",
-    desc: "UI kekinian",
+    subtitle: "UI kekinian",
   },
   {
+    id: 3,
+    icon: "📱",
     title: "Responsif",
-    desc: "Bisa di semua device",
+    subtitle: "Bisa di semua device",
   },
 ];

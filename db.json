@@ -1,0 +1,22 @@
+{
+  "features": [
+    {
+      "id": 1,
+      "icon": "⚡",
+      "title": "Cepat",
+      "subtitle": "Aplikasi ringan dan cepat"
+    },
+    {
+      "id": 2,
+      "icon": "✨",
+      "title": "Modern",
+      "subtitle": "UI kekinian"
+    },
+    {
+      "id": 3,
+      "icon": "📱",
+      "title": "Responsif",
+      "subtitle": "Bisa di semua device"
+    }
+  ]
+}

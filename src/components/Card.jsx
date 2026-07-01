@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Card = ({ id, icon, tittle, subtitle }) => {
+const Card = ({ id, icon, title, subtitle }) => {
 
   const [jumlahSuka, setJumlahSuka] = useState(() => {
     const saved = localStorage.getItem(`suka-${id}`);
@@ -17,7 +17,7 @@ const Card = ({ id, icon, tittle, subtitle }) => {
       <div className="text-3xl mb-4 text-black">{icon}</div>
 
       <h3 className="text-lg font-semibold text-gray-900 mb-2">
-        {tittle}
+        {title}
       </h3>
 
       <p className="text-gray-500 text-sm leading-relaxed">

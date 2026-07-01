@@ -7,6 +7,12 @@ import { useLogin } from "../hooks/useLogin";
 
 const Home = () => {
   const { features = [], loading, error } = useFeatures();
+  console.log({
+  features,
+  loading,
+  error,
+  });
+
   const { user } = useLogin();
 
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -61,7 +67,7 @@ const Home = () => {
           </div>
 
           <div className="p-6">
-            <LoginDemo />
+            <LoginDemo onClose={() => setShowLoginModal(false)} />
           </div>
         </div>
       </div>

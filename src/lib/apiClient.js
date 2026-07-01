@@ -12,21 +12,28 @@ export const apiClient = {
         ...options,
       },
     );
+
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(
         `Gagal ambil data: ${response.status} ${response.statusText}\n` +
-          `Pesan: ${errorData.message || "Cek koneksi atau alamat API"}`,
+          `Pesan: ${errorData.message || "Cek koneksi atau alamat API"}`
       );
     }
-    return await response.json();
+
+    const data = await response.json();
+
+    return {
+      data,
+    };
   },
+
   // POST: untuk mengirim data (seperti "pesan makanan")
   post: async (url, body, options = {}) => {
     // Mock khusus untuk /login — dengan validasi sederhana
     if (url === "/login") {
       const { email, password } = body || {};
-      // Hanya tiara@brandku.com + password 123 yang diterima
+
       if (email === "adinda@brandku.com" && password === "123") {
         return {
           success: true,
@@ -37,11 +44,12 @@ export const apiClient = {
           },
         };
       }
-      // Jika gagal validasi, lempar error seperti API nyata
+
       throw new Error(
-        "Email atau password salah — coba: tiara@brandku.com / 123",
+        "Email atau password salah — coba: adinda@brandku.com / 123"
       );
     }
+
     const response = await fetch(
       `${import.meta.env.VITE_API_BASE_URL || "https://api.brandku.com"}${url}`,
       {
@@ -54,13 +62,15 @@ export const apiClient = {
         ...options,
       },
     );
+
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(
         `Gagal kirim data: ${response.status} ${response.statusText}\n` +
-          `Pesan: ${errorData.message || "Cek koneksi atau data yang dikirim"}`,
+          `Pesan: ${errorData.message || "Cek koneksi atau data yang dikirim"}`
       );
     }
+
     return await response.json();
   },
 };
